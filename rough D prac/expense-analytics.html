@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhan Rakshak - Expense Analytics</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>Dhan Rakshak</h1>
+        <p>Your personal finance assistant</p>
+        <nav class="menu-bar">
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="menu">
+                <div id="profile-placeholder"></div>
+                <li><a href="index.html">Expense Entry</a></li>
+                <li><a href="expense-history.html">Expense History</a></li>
+                <li><a href="expense-analytics.html">Expense Analytics</a></li>
+                <li><a href="book-recommendation.html">Books</a></li>
+                <li><a href="passive-income.html">Passive Income</a></li>
+                <li><a href="download-log.html">Download Log</a></li>
+                <li class="logout-item">
+                    <button id="logout-btn">Logout</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="analytics" class="analytics">
+            <h2>Expense Analytics</h2>
+            <button id="download-pdf-analytics" class="btn" onclick="exportExpenseAnalyticsToPDF()">Download PDF</button>
+            <div class="chart-container" id="chart-container-1">
+                <canvas id="expense-chart"></canvas>
+            </div>
+            <div class="chart-container" id="chart-container-2">
+                <canvas id="bar-chart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© Smart Dhan Rakshak | Designed by madhuri ❤</p>
+    </footer>
+
+    <!-- Logout Confirmation Modal -->
+    <div id="logout-modal" class="modal">
+        <div class="modal-content">
+            <p>Are you sure you want to logout?</p>
+            <button id="confirm-logout">Yes</button>
+            <button id="cancel-logout">No</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

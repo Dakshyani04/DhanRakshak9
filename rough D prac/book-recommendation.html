@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhan Rakshak - Book Recommendation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Dhan Rakshak</h1>
+        <p>Your personal finance assistant</p>
+        <nav class="menu-bar">
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="menu">
+                <div id="profile-placeholder"></div>
+                <li><a href="index.html">Expense Entry</a></li>
+                <li><a href="expense-history.html">Expense History</a></li>
+                <li><a href="expense-analytics.html">Expense Analytics</a></li>
+                <li><a href="book-recommendation.html">Books</a></li>
+                <li><a href="passive-income.html">Passive Income</a></li>
+                <li><a href="download-log.html">Downloaded-log</a></li>
+                <li class="logout-item">
+                    <button id="logout-btn">Logout</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="books" class="books">
+            <h2>Books Recommendation</h2>
+            <div class="dropdown">
+                <button class="dropbtn">Select a Book</button>
+                <div class="dropdown-content">
+                    <a href="#" data-image="images/rich dad poor - Copy (2).jpg" data-pdf="pdfs/Rich-Dad-Poor-Dad.pdf">"Rich Dad Poor Dad" by Robert Kiyosaki</a>
+                    <a href="#" data-image="images/the total money maker.webp" data-pdf="pdfs/The Total Money Makeover - Dave Ramesey.pdf">"The Total Money Makeover" by Dave Ramsey</a>
+                    <a href="#" data-image="images/your money your life.webp" data-pdf="pdfs/Money-or-Your-Life.pdf">"Your Money or Your Life" by Vicki Robin</a>
+                    <a href="#" data-image="images/the intelligent investor.webp" data-pdf="pdfs/The Intelligent Investor - Benjamin Graham.pdf">"The Intelligent Investor" by Benjamin Graham</a>
+                    <a href="#" data-image="images/think and grow.webp" data-pdf="pdfs/napoleon-hill-think-and-grow-rich.pdf">"Think and Grow Rich" by Napoleon Hill</a>
+                </div>
+            </div>
+            <div id="book-image-container">
+                <a id="book-pdf-link" href="#" target="_blank">
+                    <img id="book-image" src="" alt="Book Image" style="display: none;">
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© Smart Dhan Rakshak  | Designed by madhuri ❤</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.querySelectorAll('.dropdown-content a').forEach(item => {
+            item.addEventListener('click', event => {
+                event.preventDefault();
+                const imageSrc = item.getAttribute('data-image');
+                const pdfLink = item.getAttribute('data-pdf');
+                const bookImage = document.getElementById('book-image');
+                const bookPdfLink = document.getElementById('book-pdf-link');
+                
+                bookImage.src = imageSrc;
+                bookImage.style.display = 'block';
+                bookPdfLink.href = pdfLink;
+            });
+        });
+    </script>
+</body>
+</html>
